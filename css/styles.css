@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    position: fixed;
+    padding: 10px;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+    background-color: rgba(127, 255, 212, 0.219);
+}
+
+.nav{
+    list-style-type: none;
+}
+
+.main{
+    display: flex;
+    position: absolute;
+    margin-top: 40px;
+}
