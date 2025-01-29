@@ -14,7 +14,7 @@ class ComponentNavbar extends HTMLElement {
     this.querySelectorAll(".nav").forEach((val, id) => {
       val.addEventListener("click", (e) => {
         let data = JSON.parse(e.target.dataset.verocultar);
-        let mainContent = document.querySelector("main");
+        let mainContent = document.querySelector("navbar");
         mainContent.className = "main"
         mainContent.innerHTML = "";
         switch (data[0]) {
@@ -32,4 +32,4 @@ class ComponentNavbar extends HTMLElement {
   }
 }
 
-customElements.define("navbar-element", ComponentNavbar);
+customElements.define("header-element", ComponentNavbar);

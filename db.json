@@ -1,0 +1,21 @@
+{
+  "facturas": [
+    {}
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "pan",
+      "stock": 3,
+      "price": 1200,
+      "image": "https://www.hola.com/horizon/landscape/918cb28d3a78-pan-leche-t.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "jamon",
+      "stock": 5,
+      "price": 5000,
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpietran.com.co%2Fproducto%2Fjamones%2Fjamon-pietran-de-cerdo%2F&psig=AOvVaw0FqWxo3fNNxrMb32ZIFSLB&ust=1738205042697000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjT-8j0mYsDFQAAAAAdAAAAABAI"
+    }
+  ]
+}
