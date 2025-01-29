@@ -1,0 +1,37 @@
+
+#productsList {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+.card-product {
+  width: 250px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  align-items: center;
+  padding: 15px;
+  
+}
+.card__img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.p {
+  font-size: 1rem;
+  color: #333;
+}

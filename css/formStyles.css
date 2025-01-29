@@ -37,10 +37,6 @@
     font-size: 14px;
 }
 
-/* Estilo para los inputs de tipo number */
-#myCreationForm input[type="number"] {
-    -moz-appearance: textfield;
-}
 
 /* Estilo para el botón de submit */
 #myCreationForm button {

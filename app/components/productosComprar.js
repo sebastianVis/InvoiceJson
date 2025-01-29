@@ -38,7 +38,19 @@ export class ProductosComponente extends HTMLElement{
         creationForm.innerHTML= '<productos-table></productos-table>'
         mainContainer.appendChild(creationForm)
     }) 
-    }
+
+    this.querySelector("#btnList").addEventListener("click", (e) => {
+        const creationForm = document.createElement("div");
+        const mainContainer = document.querySelector("main")
+        creationForm.className = 'listTable'
+        mainContainer.innerHTML = '';
+        creationForm.innerHTML= '<productos-list></productos-list>'
+        mainContainer.appendChild(creationForm)
+    })
+
+}
+
+    
 
 
 }

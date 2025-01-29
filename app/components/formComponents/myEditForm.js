@@ -15,17 +15,23 @@ class EditForm extends HTMLElement {
         </form>
         `;
         this.querySelector('#buscarEditar').addEventListener('input' , async (e) =>{
-            let textSearch = e.target.value;
+            let textSearch = e.target.value; // 
             const result = await this.searchProduct(textSearch)
+            if (result) {
+                this.editForm(result);
+            } else {
+                this.clearForm();
+            }
         });
     
         this.querySelector('#myCreationForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const formData = new FormData(e.target);
-            const productData = Object.fromEntries(formData);
-            
-            // Enviar datos editados con PATCH
+            const formData = new FormData(e.target); //  Se crea una costante para almacenar el evento que contiene todo el formulario.
+            console.log(formData)
+            const productData = Object.fromEntries(formData); // Enviar datos editados con PATCH
+            productData.id = this.querySelector('input[name="id"]').value;
             await this.updateProduct(productData);
+            
         });
 
         
@@ -37,10 +43,11 @@ class EditForm extends HTMLElement {
         const response = await fetch(url);
         const data = await response.json();
         const result = data.filter(producto => producto.nombre.toLowerCase().includes(query.toLowerCase()));
+        console.log(result)
         return result.length > 0 ? result[0] : null;
     }
 
-    populateForm(product){
+    editForm(product){
         this.querySelector('input[name="id"]').value = product.id;
         this.querySelector('input[name="nombre"]').value = product.nombre;
         this.querySelector('input[name="stock"]').value = product.stock;
@@ -48,18 +55,26 @@ class EditForm extends HTMLElement {
         this.querySelector('input[name="img"]').value = product.img;
     }
 
+    clearForm() {
+        this.querySelector('input[name="id"]').value = "";
+        this.querySelector('input[name="nombre"]').value = "";
+        this.querySelector('input[name="stock"]').value = "";
+        this.querySelector('input[name="price"]').value = "";
+        this.querySelector('input[name="img"]').value = "";
+    }
+
     async updateProduct (productData) {
-        let url = `http://localhost:3000/productos/${productData.id}`;
-        const response = await fetch(url , {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(productData)
-        });
-        if (response.ok) {
+        try {
+            const response = await fetch(`http://localhost:3000/productos/${productData.id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(productData)
+            });
+    
+            if (!response.ok) throw new Error("Error al actualizar el producto");
             alert('Producto actualizado correctamente');
-        } else {
+        } catch (error) {
+            console.error(error);
             alert('Error al actualizar el producto');
         }
         }

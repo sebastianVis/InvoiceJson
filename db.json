@@ -4,18 +4,25 @@
   ],
   "productos": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "pan",
-      "stock": 3,
-      "price": 1200,
-      "image": "https://www.hola.com/horizon/landscape/918cb28d3a78-pan-leche-t.jpg"
+      "stock": "5",
+      "price": "2000",
+      "img": "https://lesaffre.es/wp-content/uploads/2017/04/pan-corteza-blanda.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "mortadela",
-      "stock": 5,
-      "price": 5000,
-      "image": "https://eurosuper.vtexassets.com/arquivos/ids/158467-800-800?v=638236849956300000&width=800&height=800&aspect=true"
+      "stock": "5",
+      "price": "6000",
+      "img": "https://eurosuper.vtexassets.com/arquivos/ids/158467-800-800?v=638236849956300000&width=800&height=800&aspect=true"
+    },
+    {
+      "id": "3",
+      "nombre": "sopa",
+      "stock": "12",
+      "price": "2500",
+      "img": "https://www.goodnes.com/sites/g/files/jgfbjl321/files/srh_recipes/7930c00456f1d0089f82ab8df3dd6b1c.jpg"
     }
   ]
 }
